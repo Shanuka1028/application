@@ -7,12 +7,24 @@ def is_prime(number):
             return False
     return True
 
-def print_primes_up_to(limit):
-    """Print all prime numbers up to a given limit."""
+def is_palindrome(number):
+    """Check if a given number is a palindrome."""
+    num_str = str(number)
+    return num_str == num_str[::-1]
+
+def print_primes_and_palindromes_up_to(limit):
+    """Print prime numbers and palindromic numbers up to a given limit."""
+    print("Prime numbers:")
     for num in range(2, limit + 1):
         if is_prime(num):
             print(num, end=' ')
 
+    print("\nPalindromic numbers:")
+    for num in range(1, limit + 1):
+        if is_palindrome(num):
+            print(num, end=' ')
+
 if __name__ == "__main__":
-    # Example: Print prime numbers up to 20
-    print_primes_up_to(20)
+    # Example: Print prime numbers and palindromic numbers up to 30
+    print_primes_and_palindromes_up_to(30)
+
